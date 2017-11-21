@@ -1,8 +1,9 @@
+/* eslint-disable no-shadow */
 (function(global) {
-  var karma = global.__karma__;
-  var requirejs = global.requirejs
-  var locationPathname = global.location.pathname;
-  var root = 'src';
+  let karma = global.__karma__;
+  let requirejs = global.requirejs;
+  let locationPathname = global.location.pathname;
+  let root = 'src';
   karma.config.args.forEach(function(value, index) {
     if (value === 'aurelia-root') {
       root = karma.config.args[index + 1];
@@ -14,63 +15,63 @@
   }
 
   function normalizePath(path) {
-    var normalized = []
-    var parts = path
+    let normalized = [];
+    let parts = path
       .split('?')[0] // cut off GET params, used by noext requirejs plugin
-      .split('/')
+      .split('/');
 
-    for (var i = 0; i < parts.length; i++) {
+    for (let i = 0; i < parts.length; i++) {
       if (parts[i] === '.') {
-        continue
+        continue;
       }
 
       if (parts[i] === '..' && normalized.length && normalized[normalized.length - 1] !== '..') {
-        normalized.pop()
-        continue
+        normalized.pop();
+        continue;
       }
 
-      normalized.push(parts[i])
+      normalized.push(parts[i]);
     }
 
     // Use case of testing source code. RequireJS doesn't add .js extension to files asked via sibling selector
     // If normalized path doesn't include some type of extension, add the .js to it
     if (normalized.length > 0 && normalized[normalized.length - 1].indexOf('.') < 0) {
-      normalized[normalized.length - 1] = normalized[normalized.length - 1] + '.js'
+      normalized[normalized.length - 1] = normalized[normalized.length - 1] + '.js';
     }
 
-    return normalized.join('/')
+    return normalized.join('/');
   }
 
   function patchRequireJS(files, originalLoadFn, locationPathname) {
-    var IS_DEBUG = /debug\.html$/.test(locationPathname)
+    let IS_DEBUG = /debug\.html$/.test(locationPathname);
 
-    requirejs.load = function (context, moduleName, url) {
-      url = normalizePath(url)
+    requirejs.load = function(context, moduleName, url) {
+      url = normalizePath(url);
 
       if (files.hasOwnProperty(url) && !IS_DEBUG) {
-        url = url + '?' + files[url]
+        url = url + '?' + files[url];
       }
 
       if (url.indexOf('/base') !== 0) {
         url = '/base/' + url;
       }
 
-      return originalLoadFn.call(this, context, moduleName, url)
-    }
+      return originalLoadFn.call(this, context, moduleName, url);
+    };
 
-    var originalDefine = global.define;
+    let originalDefine = global.define;
     global.define = function(name, deps, m) {
       if (typeof name === 'string') {
-        originalDefine('/base/' + root + '/' + name, [name], function (result) { return result; });
+        originalDefine('/base/' + root + '/' + name, [name], function(result) { return result; });
       }
 
       return originalDefine(name, deps, m);
-    }
+    };
   }
 
   function requireTests() {
-    var TEST_REGEXP = /(spec)\.js$/i;
-    var allTestFiles = ['/base/test/unit/setup.js'];
+    let TEST_REGEXP = /(spec)\.js$/i;
+    let allTestFiles = ['/base/test/unit/setup.js'];
 
     Object.keys(window.__karma__.files).forEach(function(file) {
       if (TEST_REGEXP.test(file)) {
