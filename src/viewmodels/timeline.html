@@ -1,0 +1,37 @@
+<template>
+  <section class="ui inverted grey segment">
+    <section class="ui yellow raised segment">
+
+      <div class="ui grid">
+        <aside class="six wide column">
+          <img src="assets/images/global.png" class="ui medium centered image">
+        </aside>
+
+        <article class="ten wide column">
+          <table class="ui selectable table raised segment">
+
+            <h2 class="ui center aligned header segment">
+              Global Timeline Tweets
+            </h2>
+
+            <thead>
+            <tr>
+              <th>Tweeters</th>
+              <th>Tweets</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr repeat.for="tweet of tweets">
+              <td> ${tweet.tweeter.firstName} ${tweet.tweeter.lastName}</td>
+              <td> ${tweet.text}</td>
+            </tr>
+            </tbody>
+
+          </table>
+        </article>
+      </div>
+
+    </section>
+  </section>
+</template>
