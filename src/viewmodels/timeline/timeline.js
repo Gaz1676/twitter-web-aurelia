@@ -1,5 +1,5 @@
 import {inject} from 'aurelia-framework';
-import TweetService from '../services/tweet-service';
+import TweetService from '../../services/tweet-service';
 
 @inject(TweetService)
 export class Timeline {
@@ -8,6 +8,6 @@ export class Timeline {
 
   constructor(ts) {
     this.tweetService = ts;
-    this.tweets = this.tweetService.tweets;
+    this.tweets = ts.tweets;
   }
 }
