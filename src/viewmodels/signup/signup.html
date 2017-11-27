@@ -1,0 +1,70 @@
+<template>
+  <div></div>
+  <section class="ui inverted segment">
+    <section class="ui raised segment">
+
+      <div class="ui three column grid basic middle aligned segment">
+        <div class="column">
+          <img src="assets/images/signup.png" class="ui medium image">
+        </div>
+
+        <div class="ui center aligned column">
+          <h2 class="ui center aligned header"> Welcome to MyTweet</h2>
+          <p> Find out what’s happening in the world right now .<br>
+            Whether you’re interested in music, sports, politics, news, celebrities, or everyday moments.<br>
+            MyTweet has got it all!!
+          </p>
+          <p>
+            Connect with friends or any other people of interest <br>
+            Just Register your new details in just a few clicks.<br>
+            If you are a returning member - Welcome back...
+          </p>
+        </div>
+
+        <div class="ui column fluid form">
+          <form submit.delegate="register($event)" class="ui form column raised segment">
+            <h2 class="ui red center aligned header">Register Now!!</h2>
+
+            <div class="two fields">
+              <div class="field">
+                <label>First Name</label>
+                <div class="ui icon input">
+                  <input placeholder="First Name" type="text" value.bind="firstName">
+                  <i class="user icon"></i>
+                </div>
+              </div>
+
+              <div class="field">
+                <label>Last Name</label>
+                <div class="ui icon input">
+                  <input placeholder="Last Name" type="text" value.bind="lastName">
+                  <i class="user icon"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Email</label>
+              <div class="ui icon input">
+                <input placeholder="Email" type="text" value.bind="email">
+                <i class="mail icon"></i>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Password</label>
+              <div class="ui icon input">
+                <input type="password" value.bind="password">
+                <i class="lock icon"></i>
+              </div>
+            </div>
+
+            <button class="ui green submit button"><i class="add user icon"></i>Sign up</button>
+
+          </form>
+        </div>
+      </div>
+
+    </section>
+  </section>
+</template>
