@@ -1,12 +1,9 @@
 <template>
 
-  <section class="ui two column raised grid basic center aligned segment">
-    <aside class="column">
-      <compose view-model="./viewmodels/tweet"></compose>
-    </aside>
-    <article class="column">
-      <compose view-model="./viewmodels/timeline"></compose>
-    </article>
-  </section>
+  <require from="nav-bar.html"></require>
+  <div class="ui container page-host">
+    <nav-bar router.bind="router"></nav-bar>
+    <router-view></router-view>
+  </div>
 
 </template>
