@@ -1,0 +1,20 @@
+<template>
+  <div></div>
+  <section class="ui inverted segment">
+    <h2 class="ui red center aligned header">MyTweet Friendships</h2>
+    <table class="ui celled table raised segment">
+      <thead>
+      <tr>
+        <th>Friends Name <span style="float:right;"><i class="user icon"></i></span></th>
+        <th>Friends Email <span style="float:right;"><i class="mail icon"></i></span></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr repeat.for="tweet of membersTweet">
+        <td> ${tweet.tweeter.firstName}</td>
+        <td> ${tweet.tweeter.email}</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</template>
