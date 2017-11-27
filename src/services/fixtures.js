@@ -1,24 +1,19 @@
 export default class Fixtures {
 
-  tweeters = [
-    {
+  users = {
+    'homer@simpson.com': {
       firstName: 'Homer',
-      lastName: 'Simpson'
+      lastName: 'Simpson',
+      email: 'homer@simpson.com',
+      password: 'secret'
     },
-    {
+    'marge@simpson.com': {
       firstName: 'Marge',
-      lastName: 'Simpson'
+      lastName: 'Simpson',
+      email: 'marge@simpson.com',
+      password: 'secret'
     }
-  ];
+  };
 
-  tweets = [
-    {
-      tweeter: this.tweeters[0],
-      text: 'MMMmmmmmmm beeeerrrrrrr!!'
-    },
-    {
-      tweeter: this.tweeters[1],
-      text: 'Well Hello There World!'
-    }
-  ];
+  tweets = [];
 }
