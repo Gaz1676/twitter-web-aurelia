@@ -79,6 +79,16 @@
             "main": "aurelia-testing",
             "env": "dev"
           },
+          "jquery",
+          {
+            "name": "semantic-ui",
+            "path": "../node_modules/semantic-ui/dist",
+            "main": "semantic.min.js",
+            "resources": [
+              "semantic.min.css",
+              "components/transition.js"
+            ]
+          },
           "text"
         ]
       }
