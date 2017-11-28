@@ -1,5 +1,6 @@
 import {inject} from 'aurelia-framework';
 import TweetService from '../../services/tweet-service';
+import $ from 'jquery';
 
 @inject(TweetService)
 export class Tweet {
@@ -11,9 +12,14 @@ export class Tweet {
     this.tweetService = ts;
     this.tweeter = ts.loggedInUser;
   }
-
   createTweet() {
     this.tweetService.sendTweet(this.tweeter, this.text);
     this.text = '';
+  }
+  attached() {
+    $('#flip')
+      .transition('horizontal flip', '500ms')
+      .transition('horizontal flip')
+    ;
   }
 }

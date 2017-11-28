@@ -18,5 +18,8 @@ export class Stats {
 
   attached() {
     this.posts = this.ts.posts;
+    $('#jiggle')
+      .transition('jiggle', '1000ms')
+    ;
   }
 }
