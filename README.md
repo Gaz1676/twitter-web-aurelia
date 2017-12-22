@@ -7,9 +7,20 @@
     • View all tweets in Global timeline
     • View stats of amount of posted tweets
     • View friends list
-    
+
+#### Login Features
+
+    User Account Login Details
+    ================
+
+    login: marge@simpson.com
+    password: secret
+
+#### _Deployed @:_
+_<a href="https://twitter-web-aurelia-experiment-yteqvhomxr.now.sh/#/login"/>My Twitter Web Aurelia App</a>_
 
 
+***
 
 #### Signup Page
 <img src="http://res.cloudinary.com/cloud101/image/upload/v1511812605/myTweetSignup_xm6qyi.png"/>
