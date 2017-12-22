@@ -1,12 +1,7 @@
 export default class Fixtures {
 
+  baseUrl = 'http://gary:4000';
   users = {
-    'homer@simpson.com': {
-      firstName: 'Homer',
-      lastName: 'Simpson',
-      email: 'homer@simpson.com',
-      password: 'secret'
-    },
     'marge@simpson.com': {
       firstName: 'Marge',
       lastName: 'Simpson',
@@ -14,6 +9,5 @@ export default class Fixtures {
       password: 'secret'
     }
   };
-
   tweets = [];
 }

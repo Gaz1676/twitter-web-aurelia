@@ -14,7 +14,7 @@ export class Signup {
   }
 
   register(e) {
-    this.registered = true;
+    this.showSignup = false;
     this.tweetService.register(this.firstName, this.lastName, this.email, this.password);
     this.tweetService.login(this.email, this.password);
   }

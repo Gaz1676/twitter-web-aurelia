@@ -16,6 +16,7 @@ export class Tweet {
     this.tweetService.sendTweet(this.tweeter, this.text);
     this.text = '';
   }
+
   attached() {
     $('#flip')
       .transition('horizontal flip', '500ms')
