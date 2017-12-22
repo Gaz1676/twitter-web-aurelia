@@ -13,15 +13,12 @@ pre {
     font-size: 16px;
 }
 
-/* used for changing the background color of the navigation bar */
-nav.ui.menu {
-  background-color: #bdd9ff;
+/* used for changing the background color of the navigation bar and inverted segment */
+nav.ui.menu, section.ui.inverted.segment {
+  background-color: #b4f3ff;
 }
 
+/* sets the color for the raised and form segments */
 section.ui.raised.segment, form.ui.segment{
   background-color: #e9f5ee;
-}
-
-section.ui.inverted.segment{
-  background-color: #b6cff5;
 }
